@@ -1,0 +1,9 @@
+services:
+  make-react-app:
+    image: node:latest
+    command: "npx create-next-app@latest ${APP_NAME?error} --app --eslint --src-dir --ts --tailwind --import-alias '@/*'"
+    ports:
+      - 3000:3000
+    working_dir: /app
+    volumes:
+      - ./app:/app
